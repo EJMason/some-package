@@ -1,0 +1,29 @@
+name: Release to Github packages
+on:
+    push:
+        branches:
+            - master
+jobs:
+    release:
+        name: Publish NPM Module to Github
+        runs-on: ubuntu-18.04
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v1
+            - name: Setup Node.js
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 12
+            - name: Install dependencies
+              run: npm ci
+            - name: Compile Typescript
+              run: npm run build
+            - name: Run Unit Tests
+              run: npm run test
+            - name: Publish to Github, generate docs and add git tags
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  # TODO: FILL THIS OUT
+                  NPM_CONFIG_REGISTRY: https://npm.pkg.github.com/ejmason
+              run: npx semantic-release
