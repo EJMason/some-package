@@ -16,3 +16,11 @@ export function addTwo(n1: number, n2: number): number {
 export function addThree(n1: number, n2: number, n3: number): number {
     return n1 + n2 + n3
 }
+
+/**
+ * This will add 5 to ANYTHING!! ANY NUMBER!
+ * @param n1 first number
+ */
+export function addFiveToAnyNumber(n1: number): number {
+    return n1 + 5
+}
