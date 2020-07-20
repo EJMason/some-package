@@ -1,10 +1,10 @@
 {
-  "name": "npm-template",
-  "version": "1.0.0",
-  "description": "My template for npm modules",
+  "name": "@ejmason/some-package",
+  "version": "0.0.9",
+  "description": "This is some really cool package",
   "repository": {
     "type": "git",
-    "url": "https://github.com/EJMason/npm-template"
+    "url": "https://github.com/EJMason/some-package"
   },
   "author": "Pluralsight Inc",
   "contributors": [
